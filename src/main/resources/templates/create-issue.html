@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::newIssueContent})}">
+<head>
+    <title>Create New Issue</title>
+</head>
+<body>
+<newIssueContent>
+    <h2>Create New Issue</h2>
+    <form th:action="@{/dashboard/new}" th:object="${issue}" method="post">
+        <label>Title:</label>
+        <input type="text" th:field="*{title}" placeholder="Enter issue title" required/>
+
+        <label>Description:</label>
+        <textarea th:field="*{description}" placeholder="Describe the issue..."></textarea>
+
+        <label>Status:</label>
+        <select th:field="*{status}">
+            <option value="OPEN">Open</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="CLOSED">Closed</option>
+        </select>
+
+        <label>Assign To:</label>
+        <select th:field="*{assignee.id}">
+            <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.name}">Select</option>
+        </select>
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</newIssueContent>
+</body>
+</html>

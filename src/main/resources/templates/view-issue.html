@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::issueContent})}">
+<head>
+    <title>View Issue</title>
+</head>
+<body>
+<issueContent>
+    <div class="card">
+        <h2 th:text="${issue.title}">Issue Title</h2>
+
+        <p><strong>Description:</strong> <span th:text="${issue.description}"></span></p>
+        <p><strong>Status:</strong> <span th:text="${issue.status}"></span></p>
+        <p><strong>Reported By:</strong> <span th:text="${issue.reporter?.name}">N/A</span></p>
+        <p><strong>Assigned To:</strong> <span th:text="${issue.assignee?.name}">Not assigned</span></p>
+        <p><strong>Created At:</strong> <span th:text="${issue.createdAt}">N/A</span></p>
+        <p><strong>Updated At:</strong> <span th:text="${issue.updatedAt}">N/A</span></p>
+
+        <a class="btn" th:href="@{/dashboard}">← Back to Dashboard</a>
+    </div>
+</issueContent>
+</body>
+</html>

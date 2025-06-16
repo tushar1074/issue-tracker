@@ -1,0 +1,140 @@
+/* Reset & Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+/* Main Layout */
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Forms */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+form textarea {
+    height: 100px;
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover, .btn:hover {
+    background-color: #218838;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Alerts */
+p[th\\:if] {
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+p[th\\:if]:not(:empty):has([th\\:text*='error']) {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+p[th\\:if]:not(:empty):has([th\\:text*='success']) {
+    background-color: #d4edda;
+    color: #155724;
+}

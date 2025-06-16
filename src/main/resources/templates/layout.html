@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<head>
+    <title th:replace="${title}">Issue Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header>
+    <h1>Issue Tracker</h1>
+    <nav>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/dashboard/new}">Create Issue</a>
+        <a th:href="@{/logout}">Logout</a>
+    </nav>
+</header>
+
+<main th:replace="${content}">Loading...</main>
+
+<footer>
+    <p>&copy; 2025 Issue Tracker | Made with ♥</p>
+</footer>
+</body>
+</html>

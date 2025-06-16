@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::dashboardContent})}">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+<dashboardContent>
+    <h2>Issue Tracker Dashboard</h2>
+
+    <a th:href="@{/dashboard/new}">Create New Issue</a>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Created By</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="issue : ${issues}">
+            <td th:text="${issue.id}"></td>
+            <td th:text="${issue.title}"></td>
+            <td th:text="${issue.status}"></td>
+            <td th:text="${issue.reporter?.name ?: 'Unknown'}"></td>
+            <td><a th:href="@{'/dashboard/issue/' + ${issue.id}}">View</a></td>
+        </tr>
+        </tbody>
+    </table>
+</dashboardContent>
+</body>
+</html>
